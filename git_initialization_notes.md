@@ -50,4 +50,7 @@ git remote add origin https://github.com/<你的用户名>/chieperce-cmse-notes.
 git push -u origin main
 ```
 * **作用**：将本地的 `main` 分支推送到名为 `origin` 的远程仓库中。
-* **细节**：`-u`（即 `--set-upstream`）不仅完成了首推，还会让本地的 `main` 与远程的 `main` 建立起“长期跟踪”关系。以后更新代码只需简单输入 `git push` 或 `git pull`，不用再每次都跟上仓库名和分支名了。
+* **细节 (`-u` 参数的必要性与分支追踪概念)**：
+  * **为什么需要建立对应关系？** Git 允许你的本地拥有多个分支（比如 `main`, `dev`, `feature-A`），同时也允许你连接多个远程仓库（除了 `origin`，还可以有 `upstream`）。在如此复杂多变的情况下，如果你只输入 `git pull` 或 `git push`，Git 是无法猜到当前你要究竟要把代码同步给哪一个仓库的哪一个分支的。
+  * **`-u` 做了什么？** 加上 `-u`（`--set-upstream`），不仅完成了首次推送，还建立了由本地 `main` 到远程 `origin/main` 的**“上游跟踪 (tracking)”**关系（相当于告诉 Git：“以后我的 `main` 分支就认准 `origin` 仓库里的 `main` 分支了”）。
+  * **一劳永逸**：以后只要是在这个建立好追踪的本地分支下，更新代码只需简单地敲一个 `git push` 或 `git pull`，Git 就会自动完成对应操作，无需每次都写完整命令。
