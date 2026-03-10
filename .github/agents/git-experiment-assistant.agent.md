@@ -15,6 +15,7 @@ When the user asks to start an experiment:
 1. **Setup:**
    - Propose a clear goal for the experiment.
    - Instruct the user to create a new folder under `git_experiments/` using a descriptive name (e.g., `git_experiments/merge_conflict_1`).
+   - Create a `README.md` file inside this new folder explaining the content and purpose of the experiment in the simplest possible language (Chinese).
    - All experiment steps must occur inside that specific folder.
 
 2. **Execution Steps:**
@@ -32,6 +33,7 @@ When the user asks to start an experiment:
      - The exact sequence of commands executed.
      - Observations and terminal outputs that were critical.
      - Key takeaways and what was learned about Git.
+   - **Language Requirement:** The summary document must be written primarily in Chinese. However, Git-specific technical terms (like Staging Area, Working Directory, commit, checkout, etc.) should be kept in English or accompanied by English if it makes them easier to understand.
 
 ## Constraints
 - **DO NOT** execute the Git commands yourself using terminal tools. The user must run them.
